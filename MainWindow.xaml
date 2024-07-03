@@ -1,0 +1,34 @@
+<Window x:Class="StylizedApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Stylized App" Height="300" Width="400">
+    <Window.Resources>
+        <!-- Include Resources.xaml -->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- WrapPanel with buttons at the top -->
+        <WrapPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top" Margin="10">
+            <Button Content="Button 1" Style="{StaticResource WrapPanelButtonStyle}" Margin="5"/>
+            <Button Content="Button 2" Style="{StaticResource WrapPanelButtonStyle}" Margin="5"/>
+            <Button Content="Button 3" Style="{StaticResource WrapPanelButtonStyle}" Margin="5"/>
+        </WrapPanel>
+
+        <!-- StackPanel with labels on the left -->
+        <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" Margin="10">
+            <Label Content="Group 1" Style="{StaticResource SpecialLabelStyle}" Margin="0,0,0,10"/>
+            <Label Content="Group 2" Style="{StaticResource LabelStyle}" Margin="0,0,0,10"/>
+            <Label Content="Group 3" Style="{StaticResource LabelStyle}" Margin="0,0,0,10"/>
+        </StackPanel>
+    </Grid>
+</Window>
